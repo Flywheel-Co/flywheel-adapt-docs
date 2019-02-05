@@ -11,6 +11,23 @@
     }
 }
 
+// title
+.item-title {
+    border-bottom: 1px solid $color-light;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+
+    h2 {
+        flex-grow: 1;
+    }
+
+    .item-alias {
+        text-align: right;
+    }
+}
+
 // default
 .item-default {
     margin-top: 3px;

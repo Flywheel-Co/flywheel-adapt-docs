@@ -17,6 +17,7 @@ export default class Item {
 		this.params = item.params || [];
 		this.returns = item.params || null;
 		this.examples = item.examples || null;
+        this.aliases = item.aliases || [];
 		this.slug = slugify(item.name);
 		this.url = page.url + '#' + this.slug;
 		this.page = page;
@@ -37,4 +38,12 @@ export default class Item {
 	hasExamples() {
 		return this.examples;
 	}
+
+    /**
+     * Does this item have any aliases?
+     * @return {Boolean}
+     */
+    hasAliases() {
+        return this.aliases && this.aliases.length;
+    }
 }

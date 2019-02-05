@@ -1,4 +1,4 @@
-////
+
 /// Typography styles
 ///
 /// @since 4.0.0
@@ -37,11 +37,7 @@ h1 {
 h2 {
     font-size: 2em;
     font-weight: 400;
-    margin-bottom: 32px;
     line-height: 1.1;
-    border-bottom: 1px solid $color-light;
-    padding: 0 0 .5em;
-    margin-bottom: .5em;
 
     @include d(mobile) {
         font-size: 1.5em;

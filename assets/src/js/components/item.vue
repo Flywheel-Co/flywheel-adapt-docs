@@ -1,6 +1,6 @@
 <template>
     <section class="item" :id="item.slug">
-        <h2 v-html="titleHtml(item.title)" />
+        <item-title :item="item" />
         <div class="item-info" v-if="item.info" v-html="md(item.info)" />
 
         <div class="item-params item-panel" v-if="item.hasParams()">
@@ -39,81 +39,50 @@
 <script>
 import MarkdownIt from 'markdown-it'
 import Highlight from 'highlight.js'
+import ItemTitle from './item/title.vue';
 
 const markdown = new MarkdownIt({
-  html: true,
+    html: true,
 })
 
 export default {
 
-  /** @type {Array} component properties */
-  props: {
-    item: Object
-  },
+    /** @type {Array} component properties */
+    props: {
+        item: Object
+    },
 
-  /** @type {Object} computed properties */
-  computed: {
-    /**
-     * Generate the headline for the examples section
-     * @return {String}
-     */
-    examplesHeadline() {
-      return (Object.keys(this.item.examples).length > 1) ? 'Examples' : 'Example';
-    }
-  },
+    /** @type {Object} child components */
+    components: { ItemTitle },
 
-  /**
-   * Instance created lifecycle hook
-   */
-  created() {
-    Highlight.initHighlightingOnLoad();
-  },
-
-  /** @type {Object} component methods */
-  methods: {
-
-    /**
-     * Generate the HTML for the title
-     * @return {string}
-     */
-    titleHtml() {
-
-      if(this.item.page.basicTitles) return this.item.title;
-
-      let title = '<code>' + this.item.title;
-
-      if(this.item.hasParams()) {
-
-        let params = [];
-
-        this.item.params.forEach(param => {
-          let item = '<span>';
-
-          if(param.type) item += '<em>' + param.type + '</em> ';
-
-          item += '<strong>' + param.name + '</strong>';
-
-          if(param.default) item += ' <i>= ' + param.default + '</i>';
-
-          params.push(item + '</span>');
-        })
-
-        title += '<span class="title-params"><b>(</b>';
-        title += params.join(', ');
-        title += '<b>)</b></span>';
-      }
-
-      return title;
+    /** @type {Object} computed properties */
+    computed: {
+        /**
+         * Generate the headline for the examples section
+         * @return {String}
+         */
+        examplesHeadline() {
+            return (Object.keys(this.item.examples).length > 1) ? 'Examples' : 'Example';
+        }
     },
 
     /**
-     * Markdown rendering helper
-     * @param  {String} text content to render
-     * @return {String}
-     */
-    md(text) {
-      return markdown.render(text);
+    * Instance created lifecycle hook
+    */
+    created() {
+        Highlight.initHighlightingOnLoad();
+    },
+
+    /** @type {Object} component methods */
+    methods: {
+        /**
+         * Markdown rendering helper
+         * @param  {String} text content to render
+         * @return {String}
+         */
+        md(text) {
+          return markdown.render(text);
+        }
     }
-  }
 }
 </script>
