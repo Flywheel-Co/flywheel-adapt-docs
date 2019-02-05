@@ -2,7 +2,7 @@
   info: |
     A flexbox row containing child columns.
 
-    The row element selector can be changed by modifying the `$adapt-grid-row-selector` [setting](/#settings).
+    The row element selector can be changed by modifying the `$adapt-grid-row-selector` [setting](/#configuration).
 
     #### Modifier Classes
 
@@ -23,7 +23,7 @@
   info: |
     A child column of a row.
 
-    The column element selector can be changed by modifying the `$adapt-grid-column-selector` [setting](/#settings).
+    The column element selector can be changed by modifying the `$adapt-grid-column-selector` [setting](/#configuration).
 
     #### Modifier Classes
 

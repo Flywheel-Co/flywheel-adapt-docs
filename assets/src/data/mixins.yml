@@ -76,7 +76,7 @@
 
 - name: device
   info: |
-    Generate media queries based on devices in the [main device map](/#default-devices).
+    Generate media queries based on devices in the [main device map](/#configuration).
 
     In addition to the basic device keys, device queries can include an optional prefix to define device
     targetting limitations.
