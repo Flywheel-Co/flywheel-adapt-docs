@@ -33,5 +33,8 @@
     "vue-router": "^3.0.2",
     "vue-template-compiler": "^2.5.22",
     "webpack-stream": "^5.2.1"
+  },
+  "resolutions": {
+    "terser": "3.14.1"
   }
 }
