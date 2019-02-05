@@ -7,6 +7,12 @@
 	background: $color-white;
 	height: 96px;
 
+    @include d(mobile) {
+        height: 64px;
+        width: 100%;
+        padding: 0 16px;
+    }
+
     #site-header & {
         border-bottom: 1px solid $color-light;
     }
@@ -16,20 +22,60 @@
     }
 
 	.col {
-	   @extend .col-marginless;
+        @extend .col-marginless;
+
+        &.col-logo {
+            @include d(mobile) {
+                flex-basis: 60% !important;
+            }
+        }
+
+        &-burger {
+            text-align: right;
+        }
 	}
 
 	.logo {
 		text-transform: uppercase;
 		font-size: 1.5em;
 		letter-spacing: 0.15em;
+
+        @include d(mobile) {
+            font-size: 1.2em;
+        }
 	}
+
+    .col-burger {
+        display: none;
+
+        @include d(mobile) {
+            display: block;
+        }
+    }
 }
 
 // navigation
 .cap-nav {
 	display: flex;
 	justify-content: flex-end;
+
+    @include d(mobile) {
+        position: fixed;
+        top: 64px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba($color-white, .95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-100%);
+        transition: all .2s linear;
+
+        &.active {
+            transform: translateX(0);
+        }
+    }
 
 	a {
 		font-size: .9em;
@@ -41,6 +87,12 @@
 		padding-top: 2px;
 		border-bottom: 2px solid rgba($color-medium, 0);
 		transition: all .2s linear;
+
+        @include d(mobile) {
+            font-size: 1.5em;
+            margin-bottom: 1em;
+            margin-left: 0;
+        }
 
 		&.router-link-active {
 			border-color: $color-dark;

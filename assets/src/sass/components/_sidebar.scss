@@ -6,6 +6,10 @@
 #sidebar {
 	margin: 0;
 
+    @include d(mobile) {
+        display: none;
+    }
+
 	h6 a {
 		color: $color-dark;
 		position: relative;

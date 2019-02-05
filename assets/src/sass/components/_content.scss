@@ -6,4 +6,9 @@
 #content {
 	padding-left: 3em;
     max-width: 73%;
+
+    @include d(mobile) {
+        max-width: 90%;
+        padding-left: 0;
+    }
 }

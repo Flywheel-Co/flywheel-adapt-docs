@@ -12,4 +12,20 @@ body, html {
 #frame {
 	padding: 6em 2em 4em;
     flex-wrap: nowrap;
+
+    @include d(mobile) {
+        padding: 8em 0 3em;
+    }
+}
+
+// header
+#site-header {
+    @include d(mobile) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 90;
+        background: $color-white;
+    }
 }

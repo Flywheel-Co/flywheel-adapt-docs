@@ -31,8 +31,10 @@ $adapt-grid-column-margin: 1;
 $adapt-grid-columns:       12;
 
 /// Hamburger 🍔
-$hamburger-layer-width:   24px;
-$hamburger-layer-height:  1px;
-$hamburger-layer-spacing: 6px;
-$hamburger-layer-color:   $color-dark;
-$hamburger-hover-opacity: 1;
+$hamburger-color: $color-dark;
+$hamburger-size: 32px;
+// $hamburger-layer-width:   24px;
+// $hamburger-layer-height:  1px;
+// $hamburger-layer-spacing: 6px;
+// $hamburger-layer-color:   $color-dark;
+// $hamburger-hover-opacity: 1;

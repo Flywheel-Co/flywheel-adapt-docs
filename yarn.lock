@@ -2150,6 +2150,10 @@ delegates@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
 
+delicious-hamburgers@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/delicious-hamburgers/-/delicious-hamburgers-0.3.5.tgz#5f422131b880d3291b3e8de865210dc436958ebc"
+
 des.js@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/des.js/-/des.js-1.0.0.tgz#c074d2e2aa6a8a9a07dbd61f9a15c2cd83ec8ecc"
