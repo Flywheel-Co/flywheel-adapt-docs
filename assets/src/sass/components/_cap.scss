@@ -1,0 +1,54 @@
+////
+/// Site cap styles
+/// This element is used for both the header and footer
+////
+
+.cap {
+	background: $color-white;
+	height: 96px;
+
+    #site-header & {
+        border-bottom: 1px solid $color-light;
+    }
+
+    #site-footer & {
+        border-top: 1px solid $color-light;
+    }
+
+	.col {
+	   @extend .col-marginless;
+	}
+
+	.logo {
+		text-transform: uppercase;
+		font-size: 1.5em;
+		letter-spacing: 0.15em;
+	}
+}
+
+// navigation
+.cap-nav {
+	display: flex;
+	justify-content: flex-end;
+
+	a {
+		font-size: .9em;
+		letter-spacing: .05em;
+		font-weight: 600;
+		text-transform: uppercase;
+		color: $color-dark;
+		margin-left: 2em;
+		padding-top: 2px;
+		border-bottom: 2px solid rgba($color-medium, 0);
+		transition: all .2s linear;
+
+		&.router-link-active {
+			border-color: $color-dark;
+			color: $color-blue;
+		}
+
+		&:hover {
+			border-color: $color-medium;
+		}
+	}
+}

@@ -1,0 +1,48 @@
+- name: string-to-number
+  info: Converts a number-like string to a number.
+  params:
+    - name: $number
+      type: String
+      info: Number-like string (e.g. '14%', '24')
+  returns:
+    type: Number
+    info: A unitless number
+  examples:
+    scss: |
+      string-to-number('10px')
+      // returns 10
+- name: ratio-to-percent
+  info: Converts a ratio string to a percentage value.
+  params:
+    - name: $ratio
+      type: String
+      info: Ratio string (e.g. '4:3')
+  returns:
+    type: Number
+    info: A percentage number value
+  examples:
+    scss: |
+      ratio-to-percent('16:9')
+      // returns '56.25%'
+- name: parse-device-query
+  info: |
+    Parses a device query and returns a map of the query parts.
+
+    For more information about device queries, see [`device`](/mixins#device).
+  params:
+    - name: $query
+      type: String
+      info: Device query identifier
+  returns:
+    type: Map
+    info: A map including the comparison key and the device key
+  examples:
+    scss: |
+      parse-device-query('gte-mobile');
+
+      // returns:
+      //
+      // (
+      //   compare: 'gte',
+      //   device: 'mobile'
+      // );

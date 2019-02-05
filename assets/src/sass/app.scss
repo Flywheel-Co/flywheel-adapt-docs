@@ -1,0 +1,23 @@
+////
+/// Main stylesheet entrypoint
+///
+/// @since 4.0.0
+////
+
+// configuration
+@import 'core/settings';
+
+// vendor
+@import 'flywheel-adapt/adapt';
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600|Overpass+Mono');
+@import 'vendor/color-brewer-highlightjs';
+
+// components
+@import 'components/layout';
+@import 'components/content';
+@import 'components/sidebar';
+@import 'components/typography';
+@import 'components/cap';
+@import 'components/imax';
+@import 'components/item';
+@import 'components/tables';

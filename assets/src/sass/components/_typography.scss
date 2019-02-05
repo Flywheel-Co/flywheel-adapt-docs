@@ -1,0 +1,99 @@
+////
+/// Typography styles
+///
+/// @since 4.0.0
+////
+
+/// global
+body {
+    font: 300 16px/1.56 $font-family-primary;
+    color: $color-dark;
+}
+
+// links
+a {
+    text-decoration: none;
+    color: $color-blue;
+    font-weight: 400;
+}
+
+// paragraphs
+p {
+    font-size: 1em;
+    margin-bottom: .8em;
+}
+
+/// headings
+h1 {
+    font: 200 3em/1em $font-family-primary;
+    margin-top: -.25em;
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 400;
+    margin-bottom: 32px;
+    line-height: 1.1;
+    border-bottom: 1px solid $color-light;
+    padding: 0 0 .5em;
+    margin-bottom: .5em;
+
+    code {
+        background: transparent;
+    }
+
+    .title-params {
+        font-size: .75em;
+
+        b {
+            display: inline-block;
+            margin: 0 4px;
+        }
+
+        em {
+            color: $color-medium;
+        }
+
+        i {
+            color: $color-blue;
+        }
+    }
+}
+
+h4 {
+    font-size: 1.6em;
+    margin-top: 1.2em;
+    margin-bottom: 16px;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    a {
+       font-weight: 600;
+    }
+}
+
+
+/// pre
+pre {
+    max-width: 100%;
+}
+
+/// code
+code {
+    max-width: 100%;
+    font-family: $font-family-secondary;
+    padding: 3px 5px;
+    display: inline-block;
+    background: rgba($color-light, .6);
+
+    &.hljs {
+        background: rgba($color-light, .6);
+        padding: 20px;
+    }
+}

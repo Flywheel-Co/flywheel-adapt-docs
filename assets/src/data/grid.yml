@@ -1,0 +1,41 @@
+- name: .row
+  info: |
+    A flexbox row containing child columns.
+
+    The row element selector can be changed by modifying the `$adapt-grid-row-selector` [setting](/#settings).
+
+    #### Modifier Classes
+
+    | Name | Info |
+    | ---- | ---- |
+    | `.row-full` | A full-width row, ignoring `$adapt-grid-max-width` |
+    | `.row-{direction}` | Sets the `flex-direction` value.<br>Available values: `row`, `row-reverse`, `column`, `column-reverse` |
+    | `.row-{wrap}` | Sets the `flex-wrap` value.<br>Available values: `nowrap`, `wrap`, `wrap-reverse` |
+    | `.row-justify-{justification}` | Sets the `justify-content` value.<br>Available values: `left`, `right`, `center`, `between`, `around`, `evenly` |
+    | `.row-align-{alignment}` | Sets the `align-items` value.<br>Available values: `top`, `bottom`, `center`, `stretch`, `baseline` |
+  examples:
+    html: |
+      <div class="row row-align-center row-justify-between">
+        <div class="col" />
+      </div>
+
+- name: .col
+  info: |
+    A child column of a row.
+
+    The column element selector can be changed by modifying the `$adapt-grid-column-selector` [setting](/#settings).
+
+    #### Modifier Classes
+
+    | Name | Info |
+    | ---- | ---- |
+    | `.col-{x}` | The width of the column.<br>The base number of columns can be modified via the `$adapt-grid-columns` value. |
+    | `.col-marginless` | A column without its default margins |
+    | `.push-{x}` | Push a column X number of columns from the left |
+    | `.offset-{x}` | Offset a column X number of columns from the right |
+  examples:
+    html: |
+      <div class="row row-align-center row-justify-between">
+        <div class="col col-6 push-1" />
+        <div class="col col-4" />
+      </div>

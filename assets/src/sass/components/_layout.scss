@@ -1,0 +1,15 @@
+////
+/// Global layout styles
+////
+
+body, html {
+	min-height: 100%;
+	height: 100%;
+	background: $color-white;
+}
+
+// wrapper frame
+#frame {
+	padding: 6em 2em 4em;
+    flex-wrap: nowrap;
+}

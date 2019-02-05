@@ -1,0 +1,39 @@
+////
+/// Doc item styles
+////
+
+// item
+.item {
+    margin-top: 10em;
+}
+
+// default
+.item-default {
+    margin-top: 3px;
+
+    strong {
+        font-weight: 400;
+    }
+}
+
+// examples
+.item-examples {
+    .item-example {
+        position: relative;
+        margin-bottom: 20px;
+
+        &-lang {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: .75em;
+            background: $color-medium;
+            color: $color-white;
+            padding: 4px 7px;
+        }
+
+        code {
+            margin: 0;
+        }
+    }
+}

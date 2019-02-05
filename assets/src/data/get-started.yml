@@ -1,0 +1,115 @@
+- name: Installation
+  info: |
+    Flywheel Adapt can be installed using a variety of popular package managers, or via direct download.
+
+    #### yarn
+    ```shell
+    yarn add --dev flywheel-adapt
+    ```
+
+    #### npm
+    ```shell
+    npm install --save-dev flywheel-adapt
+    ```
+
+    #### Composer
+    ```shell
+    composer require flywheel-co/adapt
+    ```
+
+    #### Download
+    Alternatively, the latest release can be downloaded from GitHub as a ZIP archive.  
+    [Download](https://github.com/Flywheel-Co/flywheel-adapt/archive/master.zip)
+
+- name: Usage
+  info: |
+    Once downloaded, import the Flywheel Adapt Sass library into your project.
+
+    ```scss
+    @import 'path/to/flywheel-adapt/adapt'
+    ```
+
+- name: Configuration
+  info: |
+    Flywheel Adapt can be easily configured to fit your needs by modifying the default configuration variables.
+
+    | Variable | Default | Description |
+    | -------- |:-------:| ----------- |
+    | `$adapt-reset-and-normalize` | `true` | Toggle the inclusion of the [`reset-and-normalize`](/mixins#reset-and-normalize) mixin. |
+    | `$adapt-grid-width` | `90%` | Width of a [standard grid row](/grid#row) |
+    | `$adapt-grid-max-width` | `1024px` | Maximum width of a row |
+    | `$adapt-grid-row-selector` | `.row` | Grid library row element selector |
+    | `$adapt-grid-column-selector` | `.col` | Grid library column element selector |
+    | `$adapt-grid-columns` | `12` | Number of columns in a row |
+    | `$adapt-grid-column-margin` | `.75` | Column margin |
+    | `$adapt-devices` | See [default devices](#default-devices) | Device name mapping for responsive queries |
+    | `$adapt-text-inputs` | See [input variables](#input-variables) | Helper for targeting text-like `input` types |
+    | `$adapt-toggle-inputs` | See [input variables](#input-variables) | Helper for targeting toggle-like `input` types |
+    | `$adapt-button-inputs` | See [input variables](#input-variables) | Helper for targeting button-like `input` types |
+
+    #### Default Devices
+    The default device mapping used for responsive media queries can be updated by modifying the `$adapt-devices` map.
+    ```scss
+    $adapt-devices: (
+        mobile:    414px,
+        tablet:    768px,
+        desktop:   1920px,
+        ultrawide: 2560px,
+        chromebook: 1355px,
+        ipad:       768px,
+        ipad-air:   768px,
+        ipad-mini:  768px,
+        ipad-pro:   834px,
+        iphone:     320px,
+        iphone-4:   320px,
+        iphone-5:   320px,
+        iphone-6:   375px,
+        iphone-6p:  414px,
+        iphone-7:   375px,
+        iphone-7p:  414px,
+        iphone-8:   375px,
+        iphone-8p:  414px,
+        iphone-x:   375px,
+        moto-x:     360px,
+        nexus-4:    384px,
+        nexus-5:    360px,
+        nexus-6:    411px,
+        nexus-7:    600px,
+        nexus-9:    1024px,
+        note-4:     480px,
+        pixel:      411px,
+        surface:    768px,
+    );
+    ```
+
+    #### Input Variables
+    A set of configuration variables used to target different groups of input types is also available and
+    can be modified by changing the associated map value.
+    ```scss
+    $adapt-text-inputs: (
+      '[type="color"]',
+      '[type="date"]',
+      '[type="datetime"]',
+      '[type="datetime-local"]',
+      '[type="email"]',
+      '[type="month"]',
+      '[type="number"]',
+      '[type="password"]',
+      '[type="search"]',
+      '[type="tel"]',
+      '[type="text"]',
+      '[type="time"]',
+      '[type="url"]',
+      '[type="week"]'
+    );
+
+    $adapt-toggle-inputs: (
+      '[type="checkbox"]'
+    );
+
+    $adapt-button-inputs: (
+      '[type="button"]',
+      '[type="submit"]',
+      '[type="reset"]'
+    );
+    ```

@@ -1,0 +1,38 @@
+////
+/// Global settings
+////
+
+/// Colors
+$color-black:       #030303;
+$color-white:       #fff;
+$color-darker:      #111111;
+$color-dark:        #363636;
+$color-medium-dark: #555555;
+$color-medium:      #959595;
+$color-light:      #E5E9EE;
+$color-lighter:    rgba($color-light, .66);
+$color-lightest:  rgba($color-light, .33);
+$color-logo:        #383838;
+$color-white-50:    rgba($color-white, .5);
+$color-blue: #35c5ea;
+
+/// Typefaces
+$font-family-primary:   'Work Sans', sans-serif;
+$font-family-secondary: 'Overpass Mono', monospace;
+$font-family-icon:      'FontAwesome';
+
+/// Easings
+$bezier: cubic-bezier(0.68, -0.35, 0.265, 1.35);
+
+/// Grid
+$adapt-grid-max-width:     1240px;
+$adapt-grid-width:         90%;
+$adapt-grid-column-margin: 1;
+$adapt-grid-columns:       12;
+
+/// Hamburger 🍔
+$hamburger-layer-width:   24px;
+$hamburger-layer-height:  1px;
+$hamburger-layer-spacing: 6px;
+$hamburger-layer-color:   $color-dark;
+$hamburger-hover-opacity: 1;

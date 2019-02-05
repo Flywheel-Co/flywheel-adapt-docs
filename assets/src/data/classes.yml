@@ -1,0 +1,51 @@
+- name: .float-left
+  info: Float an element to the left.
+  examples:
+    html: <div class="float-left" />
+- name: .float-right
+  info: Float an element to the right.
+  examples:
+    html: |
+      <div class="float-right" />
+- name: .clearfix
+  info: Apply a standard clearfix to a parent element containing floated children.
+  examples:
+    html: |
+      <div class="clearfix">
+        <div class="float-left" />
+      </div>
+- name: .show-{$device-query}
+  info: |
+    Show an element by setting its `display` attribute to `block` if it matches a given device query.
+
+    For more information about device queries, see the [`device`](/mixins#device) mixin.
+  examples:
+    html: |
+      <div class="show-gt-mobile" />
+- name: .hide-{$device-query}
+  info: |
+    Hide an element by setting its `display` attribute to `none` if it matches a given device query.
+
+    For more information about device queries, see the [`device`](/mixins#device) mixin.
+  examples:
+    html: |
+      <div class="hide-lt-desktop" />
+- name: .no-scroll
+  info: This CSS class can be added to an element to prevent scrolling.
+  examples:
+    html: |
+      <body class="no-scroll" />
+- name: .preload
+  info: |
+    Can be used to identify when a page is loaded by removing it using JavaScript. If implemented, all
+    element transitions will be disabled until the `.preload` class is removed.
+
+    To implement the preload helper, simply add the class to the `<body>` element, and remove it when
+    the page is loaded using JavaScript.
+  examples:
+    html: |
+      <body class="preload" />
+    js: |
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.remove('preload')
+      });

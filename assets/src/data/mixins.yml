@@ -1,0 +1,246 @@
+- name: 'aspect-ratio'
+  info: Locks an element to a provided aspect ratio and sizes its immediate children to fill the element.
+  params:
+    - name: $ratio
+      type: String
+      info: An aspect ratio as a string, (e.g. `'4:3'`)
+  examples:
+    scss: |
+      .wrapper {
+        @include aspect-ratio('16:9');
+      }
+    html: |
+      <div class="wrapper">
+        <div>This element will be absolutely positioned to fill its parent</div>
+      </div>
+
+- name: background-image
+  info: Apply a background image to an element and hide its child contents.
+  params:
+    - name: $width
+      type: Number
+      info: Element width
+    - name: $height
+      type: Number
+      info: Element height
+    - name: $options
+      type: String
+      info: CSS `background` parameter value
+    - name: $cover
+      type: Boolean
+      default: true
+      info: Whether or not to set `background-size` to `cover`
+  examples:
+    scss: |
+      .element {
+        @include background-image(600px, 900px, url(../img/example.jpg) left center no-repeat, true);
+      }
+
+- name: blur
+  info: Apply a blur filter to an element, passing along a percentage value.
+  params:
+    - name: $value
+      type: Number
+      info: Percentage of blur filter to Apply
+  examples:
+    scss: |
+      @include blur(15);
+
+- name: brightness
+  info: Apply a brightness filter to an element.
+  params:
+    - name: $value
+      type: Number
+      info: Percentage of brightness filter to Apply
+  examples:
+    scss: |
+      @include brightness(66);
+
+- name: clearfix
+  info: Clearfix implementation to clear floated child elements.
+  aliases:
+      - clearfix
+  examples:
+    scss: |
+      @include clearfix;
+
+- name: contrast
+  info: Apply a contrast filter to an element.
+  params:
+    - name: $value
+      type: Number
+      info: Percentage of contrast filter to Apply
+  examples:
+    scss: |
+      @include contrast(42);
+
+- name: device
+  info: |
+    Generate media queries based on devices in the [main device map](/#default-devices).
+
+    In addition to the basic device keys, device queries can include an optional prefix to define device
+    targetting limitations.
+
+    #### Device Query Prefixes
+
+    | Query | Description |
+    | ---- | ---- |
+    | `gt-{device}` | Greater than the device size |
+    | `lt-{device}` | Less than the device size |
+    | `gte-{device}` | Greater than or equal to the device size |
+    | `lte-{device}` | Less than or equal to the device size |
+  params:
+    - name: $device-query
+      type: String
+      info: Device query identifier string
+  examples:
+    scss: |
+      @include device(desktop) {
+        // styles go here
+      }
+
+      @include device(gt-mobile) {
+        // styles go here
+      }
+
+      @include device(lte-ipad) {
+        // styles go here
+      }
+  aliases:
+    - d
+
+- name: device-between
+  info: >
+    Like the [`device`](#device) mixin, this generates media queries allowing you to specify a minimum
+    and maximum device to create a ranged media query.
+  params:
+    - name: $min-device
+      type: String
+      info: Minimum device size key
+    - name: $max-device
+      type: String
+      info: Maximum device size key
+  examples:
+    scss: |
+      @include device-between(tablet, desktop) {
+        // styles go here
+      }
+
+- name: grayscale
+  info: Apply a grayscale filter to an element.
+  params:
+    - name: $value
+      type: Number
+      info: Percentage of grayscale filter to Apply
+  examples:
+    scss: |
+      @include grayscale(75);
+  aliases:
+    - greyscale
+
+- name: placeholder
+  info: Define input placeholder styles for supported browsers.
+  examples:
+    scss: |
+      input {
+        @include placeholder {
+          color: #777;
+          text-transform: uppercase;
+        }
+      }
+
+- name: position
+  info: |
+    Defines the positioning method and location of an element.
+
+    It accepts a position value as well as a list of location values (e.g. `top 10px left 10px`).
+
+    Additionally, several shortcut mixins are also available for various position values that accept
+    the `$placement` parameter.
+
+    #### Positioning Shortcuts
+
+    | Shortcut | Description |
+    | ---- |:---- |
+    | `absolute($placement)` | Shortcut for  `position(absolute, $placement)` |
+    | `relative($placement)` | Shortcut for  `position(relative, $placement)` |
+    | `fixed($placement)` | Shortcut for  `position(fixed, $placement)` |
+  params:
+    - name: $position
+      type: String
+      info: Valid CSS `position` property value
+    - name: $location
+      type: List
+      info: Location definition list
+  examples:
+    scss: |
+      @include position(absolute, top 10px left 40px)
+
+- name: reset-and-normalize
+  info: |
+    Include the flavored reset-and-normalize library from [`webdesignberlin/css-reset-and-normalize-sass`](https://github.com/webdesignberlin/css-reset-and-normalize-sass).
+
+    This mixin is included by default via the `$adapt-reset-and-normalize` [configuration setting](/#configuration).
+  examples:
+    scss: |
+      @include reset-and-normalize;
+
+- name: rotate
+  info: Apply a rotate transformation.
+  params:
+    - name: $degrees
+      type: Number
+      info: Degrees to rotate element
+  examples:
+    scss: |
+      @include rotate(45);
+
+- name: saturate
+  info: Apply a saturation filter to an element.
+  params:
+    - name: $value
+      type: Number
+      info: Percentage of saturation filter to Apply
+  examples:
+    scss: |
+      @include saturate(75);
+
+- name: size
+  info: >
+    Generates width and height definitions on a selector. If the `$height` parameter is ommitted, the
+    `$width` value will be applied to both axes, generating a square.
+  params:
+    - name: $width
+      type: Number
+      info: Element width
+    - name: $height
+      type: Number
+      info: Element height
+      default: $width
+  examples:
+    scss: |
+      @include size(80%, 640px);
+
+- name: translate
+  info: |
+    Applies a translate transformation to an element.
+
+    Additionally, single-axis shortcut mixins are also available.
+
+    #### Single-axis Shortcuts
+
+    | Shortcut | Description |
+    | ---- |:---- |
+    | `translateX($x)` | Shortcut for `translate($x, 0)` |
+    | `translateY($y)` | Shortcut for `translate(0, $y)` |
+  params:
+    - name: $x
+      type: Number
+      info: Distance to translate on the x axis
+    - name: $y
+      type: Number
+      info: Distance to translate on the y axis
+      default: $x
+  examples:
+    scss: |
+      @include translate(-100px, 20%);

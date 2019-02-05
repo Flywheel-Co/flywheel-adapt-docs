@@ -1,0 +1,45 @@
+////
+/// Sidebar styles
+////
+
+// wrapper
+#sidebar {
+	margin: 0;
+
+	h6 a {
+		color: $color-dark;
+		position: relative;
+
+		&.router-link-active {
+			&:before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: -.8em;
+				background: $color-blue;
+				border-radius: .4em;
+				margin-top: -.2em;
+				@include size(.4em);
+			}
+		}
+	}
+}
+
+// sidebar group
+.sidebar-group {
+	margin-bottom: 32px;
+
+	li {
+		margin: 2px 0;
+
+		a {
+			color: $color-medium;
+			font-size: 14px;
+
+			&.router-link-active {
+				font-weight: 600;
+				color: $color-dark;
+			}
+		}
+	}
+}

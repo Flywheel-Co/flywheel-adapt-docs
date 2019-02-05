@@ -1,0 +1,35 @@
+////
+/// Table styles
+////
+
+table {
+    font-size: .8em;
+    border-bottom: 1px solid $color-light;
+    border-right: 1px solid $color-light;
+
+    th, td {
+        padding: 1em 1.5em;
+        border-top: 1px solid $color-light;
+        border-left: 1px solid $color-light;
+    }
+
+    th {
+        font-weight: 600;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        background: $color-lighter;
+    }
+
+    tbody {
+        tr {
+            &:nth-child(even) {
+                background: $color-lightest;
+            }
+        }
+    }
+
+    code {
+        background: none;
+        padding: 0;
+    }
+}
