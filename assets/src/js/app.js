@@ -21,7 +21,10 @@ Vue.use(VueRouter);
 // initialize vue router
 const router = new VueRouter({
 	mode: 'history',
-	routes
+	routes,
+    scrollBehavior(to) {
+        return (to.hash) ? {selector: to.hash} : {x: 0, y: 0};
+    }
 });
 
 // main app instance
