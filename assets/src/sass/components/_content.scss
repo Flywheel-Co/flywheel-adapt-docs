@@ -2,13 +2,38 @@
 /// Main content area styles
 ////
 
-// content wrapper
-#content {
-	padding-left: 3em;
-    max-width: 73%;
+// page wrapper
+.page {
+    min-height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
 
     @include d(mobile) {
-        max-width: 90%;
-        padding-left: 0;
+        padding-top: 56px;
+    }
+}
+
+// content wrapper
+.page-content {
+    padding-top: 42px;
+    padding-bottom: 56px;
+
+    @include d(mobile) {
+        max-width: calc(100vw - 40px);
+    }
+}
+
+// intro
+.page-intro {
+    border-left: 3px solid $color-blue;
+    padding-left: 24px;
+}
+
+// home
+#home {
+    .button {
+        margin-top: 20px;
     }
 }

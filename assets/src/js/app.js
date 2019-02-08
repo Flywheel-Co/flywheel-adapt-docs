@@ -5,15 +5,14 @@
 // vendor
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import axios from 'axios'
 
 // configuration
 import pages from './config/pages'
 import routes from './config/routes'
 
 // components
-import Cap from './components/cap.vue'
-import Sidebar from './components/sidebar.vue'
+import SiteHeader from './components/site-header.vue';
+import SiteSidebar from './components/site-sidebar.vue';
 
 // register vue router
 Vue.use(VueRouter);
@@ -21,10 +20,11 @@ Vue.use(VueRouter);
 // initialize vue router
 const router = new VueRouter({
 	mode: 'history',
+    linkActiveClass: 'active',
 	routes,
     scrollBehavior(to) {
         return (to.hash) ? {selector: to.hash} : {x: 0, y: 0};
-    }
+    },
 });
 
 // main app instance
@@ -37,8 +37,8 @@ const app = new Vue({
 
 	/** @type {Object} child components*/
 	components: {
-        Cap,
-        Sidebar
+        SiteHeader,
+        SiteSidebar,
     },
 
 	/**

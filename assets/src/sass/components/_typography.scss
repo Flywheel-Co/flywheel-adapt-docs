@@ -25,19 +25,25 @@ a {
 p {
     font-size: 1em;
     margin-bottom: .8em;
+
+    &.lg {
+        font-size: 2em;
+        color: $color-medium;
+    }
 }
 
 /// headings
 h1 {
     font: 200 3em/1em $font-family-primary;
-    margin-top: -.25em;
+    margin-top: -.075em;
     margin-bottom: 24px;
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: 400;
     line-height: 1.1;
+    margin-bottom: 20px;
 
     @include d(mobile) {
         font-size: 1.5em;
@@ -45,10 +51,13 @@ h2 {
 
     code {
         background: transparent;
+        font-weight: 600;
     }
 
     .title-params {
         font-size: .75em;
+        font-weight: 400;
+        color: rgba($color-dark, .75);
 
         b {
             display: inline-block;
@@ -66,16 +75,16 @@ h2 {
 }
 
 h4 {
-    font-size: 1.6em;
-    margin-top: 1.2em;
-    margin-bottom: 16px;
+    font-size: 1.3em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 400;
 }
 
 h6 {
     font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
 
     a {
        font-weight: 600;
@@ -86,6 +95,7 @@ h6 {
 /// pre
 pre {
     max-width: 100%;
+    overflow-x: auto;
 }
 
 /// code
@@ -94,10 +104,11 @@ code {
     font-family: $font-family-secondary;
     padding: 3px 5px;
     display: inline-block;
-    background: rgba($color-light, .6);
+    background: rgba($color-light, .3);
 
     &.hljs {
-        background: rgba($color-light, .6);
-        padding: 20px;
+        background: rgba($color-light, .25);
+        padding: 16px 20px;
+        font-size: .8em;
     }
 }

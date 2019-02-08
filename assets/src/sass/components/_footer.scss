@@ -1,0 +1,48 @@
+////
+/// Page footer styles
+////
+
+// wrapper
+#page-footer {
+    border-top: 1px solid $color-medium;
+    padding: 18px 0 36px;
+
+    .col {
+        @extend .col-marginless;
+    }
+
+    .credit {
+        font-size: .8em;
+        color: $color-medium;
+
+        a {
+            color: $color-dark;
+            border-bottom: 1px solid rgba($color-blue, 0);
+            transition: border-color .15s linear;
+
+            &:hover {
+                border-bottom: 1px solid $color-blue;
+            }
+        }
+    }
+
+    .next-page {
+        text-align: right;
+
+        a {
+            font-weight: 500;
+
+            i {
+                color: $color-dark;
+                transition: all .15s linear;
+            }
+
+            &:hover {
+                i {
+                    color: $color-blue;
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+}

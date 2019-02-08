@@ -1,0 +1,121 @@
+////
+/// Site header styles
+////
+
+#site-header {
+    background: $color-white;
+    border-bottom: 1px solid $color-light;
+    box-shadow: 0 1px 5px rgba($color-black, .03);
+    padding: 32px 0;
+    @include size(100%, 86px);
+
+    @include d(mobile) {
+        height: 56px;
+        padding: 17px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+    }
+
+    .row {
+        @include d(mobile) {
+            justify-content: space-between;
+        }
+    }
+
+    .col-layout-left {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 86px - 32px - 32px;
+
+        img {
+            display: block;
+            width: 286px;
+
+            @include d(mobile) {
+                width: 200px;
+            }
+        }
+
+        @include d(mobile) {
+            flex-basis: auto;
+            width: auto;
+            min-width: 220px;
+            padding-left: 20px;
+        }
+    }
+
+    .col-layout-right {
+        @include d(mobile) {
+            flex-basis: auto;
+            margin: 0;
+            padding-right: 20px;
+            text-align: right;
+            margin-top: -5px;
+        }
+    }
+
+    .hamburger {
+        display: none;
+
+        @include d(mobile) {
+            display: inline-block;
+        }
+    }
+}
+
+// navigation
+#primary-navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+
+    @include d(mobile) {
+        position: fixed;
+        top: 56px;
+        left: 0;
+        flex-direction: column;
+        background: rgba($color-white, .9);
+        width: 100%;
+        height: calc(100vh - 56px);
+        align-items: center;
+        justify-content: center;
+        transition: all .2s $easing-in-out-cubic;
+        @include translateX(-100%);
+    }
+
+    .active & {
+        @include translateX(0);
+    }
+
+    a {
+        margin-left: 5%;
+        font: 600 1em/1em $font-family-primary;
+        color: $color-dark;
+        letter-spacing: 0.02em;
+        padding-top: 4px;
+        padding-bottom: 2px;
+        border-bottom: 2px solid rgba($color-dark, 0);
+        transition: border-color .2s linear;
+
+        @include d(mobile) {
+            margin: 16px 0;
+            font-size: 2.5em;
+        }
+
+        &:hover {
+            border-color: $color-dark;
+        }
+
+        &.active {
+            border-color: $color-blue;
+
+            &:hover {
+                border-color: $color-blue;
+            }
+        }
+    }
+}

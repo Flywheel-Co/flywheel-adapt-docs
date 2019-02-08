@@ -19,7 +19,10 @@ $color-blue: #35c5ea;
 /// Typefaces
 $font-family-primary:   'Work Sans', sans-serif;
 $font-family-secondary: 'Overpass Mono', monospace;
-$font-family-icon:      'FontAwesome';
+
+$fa-font-path: "../fonts";
+$font-family-icon: 'FontAwesome';
+
 
 /// Easings
 $bezier: cubic-bezier(0.68, -0.35, 0.265, 1.35);
@@ -33,8 +36,3 @@ $adapt-grid-columns:       12;
 /// Hamburger 🍔
 $hamburger-color: $color-dark;
 $hamburger-size: 32px;
-// $hamburger-layer-width:   24px;
-// $hamburger-layer-height:  1px;
-// $hamburger-layer-spacing: 6px;
-// $hamburger-layer-color:   $color-dark;
-// $hamburger-hover-opacity: 1;

@@ -73,7 +73,7 @@ export default {
 			dist: assets.dist + 'img'
 		},
 		fonts: {
-			src: ['./node_modules/font-awesome/fonts/*', assets.src + 'fonts/*'],
+			src: ['./node_modules/@fortawesome/fontawesome-pro/webfonts/*', assets.src + 'fonts/*'],
 			dist: assets.dist + 'fonts',
 		},
 		data: {

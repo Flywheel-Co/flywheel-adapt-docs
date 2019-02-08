@@ -36,10 +36,14 @@ export default class Page {
      * @return {Array}
      */
 	getItems() {
-		const data = require('../../../dist/data/' + this.id + '.json');
-		const items = [];
+        const items = [];
 
-		data.forEach(item => items.push(new Item(item, this)));
+        try {
+            const data = require('../../../dist/data/' + this.id + '.json');
+            data.forEach(item => items.push(new Item(item, this)));
+        } catch(error) {
+            return false;
+        }
 
 		return items;
 	}

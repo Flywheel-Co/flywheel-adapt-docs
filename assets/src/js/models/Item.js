@@ -3,6 +3,7 @@
  */
 
 import slugify from 'underscore.string/slugify'
+import Highlight from 'highlight.js'
 
 export default class Item {
 
@@ -46,4 +47,22 @@ export default class Item {
     hasAliases() {
         return this.aliases && this.aliases.length;
     }
+
+    /**
+     * Getter for parsed examples syntax object
+     * @return {Object}
+     */
+    get examplesHtml() {
+        if(!this.examples) return null;
+
+        let parsed = {};
+
+        Object.keys(this.examples).map((lang, index) => {
+            let raw = this.examples[lang];
+            parsed[lang] = Highlight.highlight(lang, raw).value;
+        });
+
+        return parsed;
+    }
+
 }

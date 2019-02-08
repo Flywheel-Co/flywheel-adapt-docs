@@ -4,8 +4,14 @@
 
 import pages from './pages';
 import Page from '../components/page.vue';
+import Home from '../components/home.vue'
 
-const routes = [];
+// homepage
+const routes = [{
+    path: '/',
+    name: 'home',
+    component: Home,
+}];
 
 // add all pages registered in config
 pages.forEach(page => {
@@ -17,11 +23,5 @@ pages.forEach(page => {
 	})
 })
 
-// home
-routes.push({
-	path: '/',
-	name: 'home',
-	redirect: '/' + pages[0].id
-})
 
 export default routes

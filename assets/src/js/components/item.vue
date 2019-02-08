@@ -28,9 +28,9 @@
 
         <div class="item-examples" v-if="item.hasExamples()">
             <h4 v-html="examplesHeadline"></h4>
-            <div class="item-example" v-for="(example, lang) in item.examples">
+            <div class="item-example" v-for="(example, lang) in item.examplesHtml">
                 <div class="item-example-lang" v-html="lang"></div>
-                <pre :class="'highlight-' + lang"><code>{{ example }}</code></pre>
+                <pre :class="'highlight-' + lang"><code class="hljs" v-html="example"></code></pre>
             </div>
         </div>
     </section>
@@ -40,10 +40,11 @@
 import MarkdownIt from 'markdown-it'
 import Highlight from 'highlight.js'
 import ItemTitle from './item/title.vue';
+import MarkdownItHighlightJs from 'markdown-it-highlightjs';
 
 const markdown = new MarkdownIt({
     html: true,
-})
+}).use(MarkdownItHighlightJs);
 
 export default {
 
@@ -64,13 +65,6 @@ export default {
         examplesHeadline() {
             return (Object.keys(this.item.examples).length > 1) ? 'Examples' : 'Example';
         }
-    },
-
-    /**
-    * Instance created lifecycle hook
-    */
-    created() {
-        Highlight.initHighlightingOnLoad();
     },
 
     /** @type {Object} component methods */

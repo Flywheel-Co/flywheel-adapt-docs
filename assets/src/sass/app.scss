@@ -12,13 +12,18 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600|Overpass+Mono');
 @import 'vendor/color-brewer-highlightjs';
 @import 'delicious-hamburgers/scss/hamburgers';
+@import '@fortawesome/fontawesome-pro/scss/fontawesome.scss';
+@import '@fortawesome/fontawesome-pro/scss/light.scss';
 
 // components
 @import 'components/layout';
 @import 'components/content';
 @import 'components/sidebar';
 @import 'components/typography';
-@import 'components/cap';
-@import 'components/imax';
+@import 'components/buttons';
+// @import 'components/cap';
+@import 'components/header';
+@import 'components/footer';
+// @import 'components/imax';
 @import 'components/item';
 @import 'components/tables';

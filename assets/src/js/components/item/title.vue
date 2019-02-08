@@ -2,7 +2,7 @@
     <div class="item-title">
         <h2>
             <code v-if="titleHasCode">
-                {{ item.title }}<span class="title-params" v-if="item.hasParams()"><b>(</b><template v-for="(param, index) in item.params"><template v-if="index">, </template><span><em v-if="param.type" v-html="param.type" /> <strong v-html="param.name" /><i v-if="param.default">= <i v-html="param.default" /></i></span></template><b>)</b></span>
+                {{ item.title }}<span class="title-params" v-if="item.hasParams()"><b>(</b><template v-for="(param, index) in item.params"><template v-if="index">, </template><span><em v-if="param.type" v-html="param.type" /> <strong v-html="param.name" /><i v-if="param.default"> = <i v-html="param.default" /></i></span></template><b>)</b></span>
             </code>
             <template v-else>{{ item.title }}</template>
         </h2>
