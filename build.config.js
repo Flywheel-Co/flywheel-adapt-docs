@@ -7,7 +7,7 @@
 import gulpif from 'gulp-if';
 import minimist from 'minimist';
 import path from 'path';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 import { VueLoaderPlugin } from 'vue-loader';
 
 /**
@@ -141,8 +141,11 @@ export default {
 				    vue: 'vue/dist/vue.min.js'
 				}
 			},
+            optimization: {
+                minimizer: [new TerserPlugin()]
+            },
 			plugins: [
-				new UglifyJsPlugin(),
+				// new UglifyJsPlugin(),
 				new VueLoaderPlugin()
 			]
 		}, webpackBase),
