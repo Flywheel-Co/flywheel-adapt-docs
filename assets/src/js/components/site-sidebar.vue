@@ -12,7 +12,7 @@
                 </h6>
     			<ul :class="{active: page.id == $route.name}">
     				<li v-for="item in page.items" :key="item.slug + '_sidebar_link'">
-    					<router-link :to="item.url">{{ item.title }}</router-link>
+    					<a :href="item.url">{{ item.title }}</a>
     				</li>
     			</ul>
     		</div>
