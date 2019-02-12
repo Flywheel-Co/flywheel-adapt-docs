@@ -29,7 +29,8 @@ const router = new VueRouter({
 
 // update the document title on route change
 router.afterEach((to, from) => {
-    document.title = to.meta.title || 'Flywheel Adapt';
+    document.title = to.meta.title + ' - Flywheel Adapt' || 'Flywheel Adapt';
+    document.getElementById('ogTitle').setAttribute('content', to.meta.title || 'Flywheel Adapt')
 });
 
 // main app instance

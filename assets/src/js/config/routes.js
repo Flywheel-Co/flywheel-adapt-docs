@@ -22,7 +22,7 @@ pages.forEach(page => {
 		name: page.id,
 		component: Page,
 		props: {page: page},
-        meta: {title: page.title + ' - Flywheel Adapt'}
+        meta: {title: page.title}
 	})
 })
 
