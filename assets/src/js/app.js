@@ -24,7 +24,12 @@ const router = new VueRouter({
 	routes,
     scrollBehavior(to) {
         return (to.hash) ? {selector: to.hash} : {x: 0, y: 0};
-    },
+    }
+});
+
+// update the document title on route change
+router.afterEach((to, from) => {
+    document.title = to.meta.title || 'Flywheel Adapt';
 });
 
 // main app instance

@@ -11,6 +11,8 @@ const routes = [{
     path: '/',
     name: 'home',
     component: Home,
+    meta: {title: 'Flywheel Adapt'}
+
 }];
 
 // add all pages registered in config
@@ -19,7 +21,8 @@ pages.forEach(page => {
 		path: '/' + page.id,
 		name: page.id,
 		component: Page,
-		props: {page: page}
+		props: {page: page},
+        meta: {title: page.title + ' - Flywheel Adapt'}
 	})
 })
 
